@@ -15,14 +15,14 @@ namespace NH645015_MIS4200.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Some things about me.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "My Contact Information.";
 
             return View();
         }
