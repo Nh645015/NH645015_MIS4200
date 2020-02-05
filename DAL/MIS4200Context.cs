@@ -21,6 +21,8 @@ namespace NH645015_MIS4200.DAL
 
         public DbSet<Orders> Orders { get; set; }
         public DbSet<customer> Customers { get; set; }
+        public DbSet<Products> Products { get; set; }
+        public DbSet<OrderDetails> OrderDetails { get; set; }
 
     }
 }
