@@ -11,116 +11,116 @@ using NH645015_MIS4200.Models;
 
 namespace NH645015_MIS4200.Controllers
 {
-    public class orderDetailsController : Controller
+    public class VisitDetailsController : Controller
     {
         private MIS4200Context db = new MIS4200Context();
 
-        // GET: orderDetails
+        // GET: VisitDetails
         public ActionResult Index()
         {
-            var orderDetails = db.OrderDetails.Include(o => o.Order).Include(o => o.Product);
-            return View(orderDetails.ToList());
+            var visitDetails = db.VisitDetails.Include(v => v.Pet).Include(v => v.Vet);
+            return View(visitDetails.ToList());
         }
 
-        // GET: orderDetails/Details/5
+        // GET: VisitDetails/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            orderDetail orderDetail = db.OrderDetails.Find(id);
-            if (orderDetail == null)
+            VisitDetail visitDetail = db.VisitDetails.Find(id);
+            if (visitDetail == null)
             {
                 return HttpNotFound();
             }
-            return View(orderDetail);
+            return View(visitDetail);
         }
 
-        // GET: orderDetails/Create
+        // GET: VisitDetails/Create
         public ActionResult Create()
         {
-            ViewBag.orderID = new SelectList(db.Orders, "orderID", "description");
-            ViewBag.productID = new SelectList(db.Products, "productID", "description");
+            ViewBag.petID = new SelectList(db.Pets, "petID", "petName");
+            ViewBag.vetID = new SelectList(db.Vets, "vetID", "firstName");
             return View();
         }
 
-        // POST: orderDetails/Create
+        // POST: VisitDetails/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "orderdetailID,qtyOrdered,price,orderID,productID")] orderDetail orderDetail)
+        public ActionResult Create([Bind(Include = "visitID,visitDate,price,petID,vetID")] VisitDetail visitDetail)
         {
             if (ModelState.IsValid)
             {
-                db.OrderDetails.Add(orderDetail);
+                db.VisitDetails.Add(visitDetail);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.orderID = new SelectList(db.Orders, "orderID", "description", orderDetail.orderID);
-            ViewBag.productID = new SelectList(db.Products, "productID", "description", orderDetail.productID);
-            return View(orderDetail);
+            ViewBag.petID = new SelectList(db.Pets, "petID", "petName", visitDetail.petID);
+            ViewBag.vetID = new SelectList(db.Vets, "vetID", "firstName", visitDetail.vetID);
+            return View(visitDetail);
         }
 
-        // GET: orderDetails/Edit/5
+        // GET: VisitDetails/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            orderDetail orderDetail = db.OrderDetails.Find(id);
-            if (orderDetail == null)
+            VisitDetail visitDetail = db.VisitDetails.Find(id);
+            if (visitDetail == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.orderID = new SelectList(db.Orders, "orderID", "description", orderDetail.orderID);
-            ViewBag.productID = new SelectList(db.Products, "productID", "description", orderDetail.productID);
-            return View(orderDetail);
+            ViewBag.petID = new SelectList(db.Pets, "petID", "petName", visitDetail.petID);
+            ViewBag.vetID = new SelectList(db.Vets, "vetID", "firstName", visitDetail.vetID);
+            return View(visitDetail);
         }
 
-        // POST: orderDetails/Edit/5
+        // POST: VisitDetails/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "orderdetailID,qtyOrdered,price,orderID,productID")] orderDetail orderDetail)
+        public ActionResult Edit([Bind(Include = "visitID,visitDate,price,petID,vetID")] VisitDetail visitDetail)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(orderDetail).State = EntityState.Modified;
+                db.Entry(visitDetail).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.orderID = new SelectList(db.Orders, "orderID", "description", orderDetail.orderID);
-            ViewBag.productID = new SelectList(db.Products, "productID", "description", orderDetail.productID);
-            return View(orderDetail);
+            ViewBag.petID = new SelectList(db.Pets, "petID", "petName", visitDetail.petID);
+            ViewBag.vetID = new SelectList(db.Vets, "vetID", "firstName", visitDetail.vetID);
+            return View(visitDetail);
         }
 
-        // GET: orderDetails/Delete/5
+        // GET: VisitDetails/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            orderDetail orderDetail = db.OrderDetails.Find(id);
-            if (orderDetail == null)
+            VisitDetail visitDetail = db.VisitDetails.Find(id);
+            if (visitDetail == null)
             {
                 return HttpNotFound();
             }
-            return View(orderDetail);
+            return View(visitDetail);
         }
 
-        // POST: orderDetails/Delete/5
+        // POST: VisitDetails/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            orderDetail orderDetail = db.OrderDetails.Find(id);
-            db.OrderDetails.Remove(orderDetail);
+            VisitDetail visitDetail = db.VisitDetails.Find(id);
+            db.VisitDetails.Remove(visitDetail);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

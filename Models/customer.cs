@@ -14,6 +14,6 @@ namespace NH645015_MIS4200.Models
         public string phone { get; set; }
         public DateTime customerSince { get; set; }
 
-        public ICollection<Order> Order { get; set; }
+        public ICollection<Pet> Pet { get; set; }
     }
 }
