@@ -11,8 +11,9 @@ namespace NH645015_MIS4200.DAL
     {
         public MIS4200Context() : base("name=DefaultConnection")
         {
-            // this method is a 'constructor' and is called when a new context is created
-            // the base attribute says which connection string to use
+            // add the SetInitializer statement here
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MIS4200Context,
+            NH645015_MIS4200.Migrations.MISContext.Configuration>("DefaultConnection"));
         }
 
         // Include each object here. The value inside <> is the name of the class,
@@ -22,5 +23,11 @@ namespace NH645015_MIS4200.DAL
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<orderDetail> OrderDetails { get; set; }
+
+        // add this method - it will be used later
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

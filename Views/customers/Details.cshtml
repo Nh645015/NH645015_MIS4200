@@ -1,29 +1,29 @@
-﻿@model NH645015_MIS4200.Models.customer
+﻿@model NH645015_MIS4200.Models.Customer
 
 @{
-    ViewBag.Title = "Customer Details";
+    ViewBag.Title = "Details";
 }
 
-<h2>Customer Details</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>customer</h4>
+    <h4>Customer</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.customerLastName)
+            @Html.DisplayNameFor(model => model.firstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.customerLastName)
+            @Html.DisplayFor(model => model.firstName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.customerFirstName)
+            @Html.DisplayNameFor(model => model.lastName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.customerFirstName)
+            @Html.DisplayFor(model => model.lastName)
         </dd>
 
         <dt>
