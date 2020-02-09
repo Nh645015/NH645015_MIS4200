@@ -11,7 +11,6 @@ namespace NH645015_MIS4200.Migrations.MISContext
         {
             AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"Migrations\MISContext";
-            ContextKey = "NH645015_MIS4200.DAL.MIS4200Context";
         }
 
         protected override void Seed(NH645015_MIS4200.DAL.MIS4200Context context)
