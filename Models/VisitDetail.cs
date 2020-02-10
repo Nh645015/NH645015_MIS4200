@@ -10,7 +10,9 @@ namespace NH645015_MIS4200.Models
     {
         [Key]   
         public int visitID { get; set; }
+        [Display(Name = "Date of Visit")]
         public DateTime visitDate { get; set; }
+        [Display(Name = "Price of the visit")]
         public decimal price { get; set; }
 
         public int petID { get; set; }

@@ -10,11 +10,13 @@ namespace NH645015_MIS4200.Models
     {
         [Key]
         public int petID { get; set; }
+        [Display(Name = "Pets Name")]
         public string petName { get; set; }
+        [Display(Name = "Breed of pet")]
         public string petBreed { get; set; }
 
         public ICollection<VisitDetail> VisitDetail { get; set; }
-
+   
         public int customerID { get; set; }
         public virtual Customer Customer { get; set; }
 
