@@ -40,7 +40,7 @@ namespace NH645015_MIS4200.Controllers
         // GET: Pets/Create
         public ActionResult Create()
         {
-            ViewBag.customerID = new SelectList(db.Customers, "customerID", "firstName");
+            ViewBag.customerID = new SelectList(db.Customers, "customerID", "fullName");
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace NH645015_MIS4200.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.customerID = new SelectList(db.Customers, "customerID", "firstName", pet.customerID);
+            ViewBag.customerID = new SelectList(db.Customers, "customerID", "fullName", pet.customerID);
             return View(pet);
         }
 
@@ -74,7 +74,7 @@ namespace NH645015_MIS4200.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.customerID = new SelectList(db.Customers, "customerID", "firstName", pet.customerID);
+            ViewBag.customerID = new SelectList(db.Customers, "customerID", "fullName", pet.customerID);
             return View(pet);
         }
 
@@ -91,7 +91,7 @@ namespace NH645015_MIS4200.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.customerID = new SelectList(db.Customers, "customerID", "firstName", pet.customerID);
+            ViewBag.customerID = new SelectList(db.Customers, "customerID", "fullName", pet.customerID);
             return View(pet);
         }
 

@@ -31,6 +31,10 @@ namespace NH645015_MIS4200.Models
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode =true)]
         public DateTime customerSince { get; set; }
 
+        public string fullName { get { return lastName + ", " + firstName; } }
+
+
+
         public ICollection<Pet> Pet { get; set; }
     }
 }

@@ -23,6 +23,7 @@ namespace NH645015_MIS4200.Models
         [StringLength(3)]
         public string petType { get; set; }
 
+
         public ICollection<VisitDetail> VisitDetail { get; set; }
 
         public int customerID { get; set; }

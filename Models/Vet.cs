@@ -23,6 +23,8 @@ namespace NH645015_MIS4200.Models
             ErrorMessage = "Phone numbers must be in the format (xxx) xxx-xxxx or xxx-xxx-xxxx")]
         public string Phone { get; set; }
 
+        public string fullName { get { return lastName + ", " + firstName; } }
+
         public ICollection<VisitDetail> VisitDetail { get; set; }
     }
 }
