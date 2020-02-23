@@ -49,7 +49,7 @@ namespace NH645015_MIS4200.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "petID,petName,petBreed,customerID")] Pet pet)
+        public ActionResult Create([Bind(Include = "petID,petName,petBreed,petType,customerID")] Pet pet)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace NH645015_MIS4200.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "petID,petName,petBreed,customerID")] Pet pet)
+        public ActionResult Edit([Bind(Include = "petID,petName,petBreed,petType,customerID")] Pet pet)
         {
             if (ModelState.IsValid)
             {

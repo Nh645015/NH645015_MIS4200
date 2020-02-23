@@ -11,8 +11,11 @@ namespace NH645015_MIS4200.Models
         [Key]   
         public int visitID { get; set; }
         [Display(Name = "Date of Visit")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime visitDate { get; set; }
         [Display(Name = "Price of the visit")]
+        [DataType(DataType.Currency)]
         public decimal price { get; set; }
 
         public int petID { get; set; }
