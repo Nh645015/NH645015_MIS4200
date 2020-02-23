@@ -172,6 +172,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PetsController.cs" />
+    <Compile Include="Controllers\userDetailsController.cs" />
     <Compile Include="Controllers\VetsController.cs" />
     <Compile Include="Controllers\VisitDetailsController.cs" />
     <Compile Include="DAL\MIS4200Context.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Pet.cs" />
+    <Compile Include="Models\userDetails.cs" />
     <Compile Include="Models\Vet.cs" />
     <Compile Include="Models\VisitDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -265,6 +267,12 @@
     <Content Include="Views\VisitDetails\Details.cshtml" />
     <Content Include="Views\VisitDetails\Edit.cshtml" />
     <Content Include="Views\VisitDetails\Index.cshtml" />
+    <Content Include="Views\userDetails\Create.cshtml" />
+    <Content Include="Views\userDetails\Delete.cshtml" />
+    <Content Include="Views\userDetails\Details.cshtml" />
+    <Content Include="Views\userDetails\Edit.cshtml" />
+    <Content Include="Views\userDetails\Index.cshtml" />
+    <Content Include="Views\userDetails\DuplicateUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

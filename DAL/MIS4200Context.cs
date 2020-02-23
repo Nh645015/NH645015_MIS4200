@@ -19,11 +19,14 @@ namespace NH645015_MIS4200.DAL
         public DbSet<Vet> Vets { get; set; }
         public DbSet<VisitDetail> VisitDetails { get; set; }
 
+
+
         // add this method - it will be used later
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
         }
 
+        public System.Data.Entity.DbSet<NH645015_MIS4200.Models.userDetails> userDetails { get; set; }
     }
 }
